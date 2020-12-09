@@ -1,0 +1,17 @@
+User-agent: Googlebot
+Allow: /index.html
+Allow: /about.html
+Atharva Ashok Pati
+{% seo %}
+Atharva Patil
+attu patil
+Atharva
+python
+software Engineer
+computer Science
+engineer
+Coder
+cpp
+c++
+c
+ {% seo %}
