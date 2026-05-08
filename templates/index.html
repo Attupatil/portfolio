@@ -1,86 +1,204 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
-
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-  <title>Atharva Patil | Portfolio</title>
- <meta name="description" content="Atharva Patil | Software Developer Portfolio">
-<link href="./static/main.3f6952e4.css" rel="stylesheet"></head>
-
-<body class="minimal">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
-<!-- Add your content of header -->
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-inverse">
+{% block content %}
+<section class="hero-section">
     <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="">01 : Home</a></li>
-          <li><a href="./works.html" title="">02 : Works</a></li>
-          <li><a href="./about.html" title="">03 : About me</a></li>
-          <li><a href="./contact.html" title="">04 : Contact</a></li>
-        </ul>
-
-
-      </div>
-    </div>
-  </nav>
-</header>
-<!-- Add your site or app content here -->
-  <div class="hero-full-container background-image-container white-text-container" style="background-image: url('./static/assets/images/space.jpg')">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="hero-full-wrapper">
-            <div class="text-content">
-              <h1>Hello,<br>
-                <span id="typed-strings">
-                  <span>I'm Atharva Ashok Patil</span>
-                  <span> Computer Science Engineer</span>
-                  <span>Python Developer</span>
-                  <span>Cyber security analyst</span>
-                  <span>Working as a Freelance</span>
-                </span>
-                <span id="typed"></span>
-              </h1>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <h1 class="display-3 fw-bold mb-3">Atharva Ashok Patil</h1>
+                <h2 class="h4 mb-4 neon-text">SDE2 @ DELL TECHNOLOGIES | DevSecOps | Security Engineer</h2>
+                <p class="lead mb-5" style="color: var(--dim-text);">
+                    Specializing in <strong>DevSecOps</strong> and <strong>Security Engineering</strong> at Dell. 
+                    I focus on the entire security lifecycle: from Threat Modelling and SBOM analysis to automated 
+                    Vulnerability Scanning and secure CI/CD pipelines. Currently scaling the <strong>Dell Data Lakehouse</strong> 
+                    with a security-first mindset.
+                </p>
+                <div class="d-flex justify-content-center gap-3">
+                    <a href="/contact" class="btn btn-cyber">Secure a Connection</a>
+                    <a href="/about" class="btn btn-outline-light px-4">View Experience</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
-  </div>
+</section>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     type();
-     movingBackgroundImage();
-  });
-</script>
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 neon-text">Core Arsenal & Projects</h2>
+        <div class="row g-4 text-center">
+            <!-- DevSecOps Tab -->
+            <div class="col-md-3">
+                <div class="card h-100 p-4 arsenal-card" data-bs-toggle="modal" data-bs-target="#devsecopsModal">
+                    <i class="fas fa-shield-halved fa-3x mb-3 text-info"></i>
+                    <h4>DevSecOps</h4>
+                    <p class="small text-secondary">Jenkins, SBOM, PR Checks</p>
+                    <div class="mt-auto">
+                        <span class="btn btn-sm btn-outline-info">Explore</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Cloud Security Tab -->
+            <div class="col-md-3">
+                <div class="card h-100 p-4 arsenal-card" data-bs-toggle="modal" data-bs-target="#cloudModal">
+                    <i class="fas fa-cloud fa-3x mb-3 text-primary"></i>
+                    <h4>Cloud & K8s</h4>
+                    <p class="small text-secondary">Azure (AZ-900), Kubernetes, Self-Hosting</p>
+                    <div class="mt-auto">
+                        <span class="btn btn-sm btn-outline-primary">Explore</span>
+                    </div>
+                </div>
+            </div>
+            <!-- OffSec Tab -->
+            <div class="col-md-3">
+                <div class="card h-100 p-4 arsenal-card" data-bs-toggle="modal" data-bs-target="#offsecModal">
+                    <i class="fas fa-user-secret fa-3x mb-3 text-danger"></i>
+                    <h4>Offensive Security</h4>
+                    <p class="small text-secondary">HTB, TryHackMe, OSCP Prep</p>
+                    <div class="mt-auto">
+                        <span class="btn btn-sm btn-outline-danger">Explore</span>
+                    </div>
+                </div>
+            </div>
+            <!-- AI Security Tab -->
+            <div class="col-md-3">
+                <div class="card h-100 p-4 arsenal-card" data-bs-toggle="modal" data-bs-target="#aisecModal">
+                    <i class="fas fa-brain fa-3x mb-3 text-warning"></i>
+                    <h4>AI Security</h4>
+                    <p class="small text-secondary">Dell Data Lakehouse, Steganography</p>
+                    <div class="mt-auto">
+                        <span class="btn btn-sm btn-outline-warning">Explore</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- Modals for Visualizations/Animations -->
+<!-- DevSecOps Modal -->
+<div class="modal fade" id="devsecopsModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-info">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title neon-text">DevSecOps Lifecycle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="text-center mb-4">
+                    <div class="spinner-grow text-info" role="status"></div>
+                    <p class="mt-2 text-info">Automating Security in CI/CD</p>
+                </div>
+                <p>Focused on shifting security left by integrating automated checks directly into the developer workflow.</p>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <a href="https://github.com/attupatil" target="_blank" class="text-info text-decoration-none">
+                            <strong>Jenkins Pipeline Automation:</strong> Creating secure, resilient pipelines for continuous delivery.
+                        </a>
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>SBOM & CBOM:</strong> Analyzing software and crypto bill of materials to identify supply chain risks.
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>Vulnerability Management:</strong> Triggering container scans and managing product lifecycle security defects.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-<script type="text/javascript" src="./static/main.70a66962.js"></script></body>
+<!-- Cloud Modal -->
+<div class="modal fade" id="cloudModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-primary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title neon-text">Cloud & Kubernetes Security</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Securing modern cloud infrastructure and containerized workloads.</p>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>Azure (AZ-900):</strong> Foundational knowledge in cloud services and security protocols.
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>Kubernetes Security:</strong> Managing secure deployments and scaling in K8s environments.
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <a href="https://github.com/attupatil/portfolio" target="_blank" class="text-info text-decoration-none">
+                            <strong>Self-Hosting:</strong> Designing and deploying this secure portfolio on PythonAnywhere.
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
-</html>
+<!-- OffSec Modal -->
+<div class="modal fade" id="offsecModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-danger">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title neon-text">Offensive Security Labs</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Sharpening offensive skills through rigorous labs and certifications.</p>
+                <div class="row text-center g-3">
+                    <div class="col-6">
+                        <div class="p-3 border border-secondary rounded">
+                            <h6 class="text-danger">Hack The Box</h6>
+                            <small class="text-secondary">Proving Grounds</small>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="p-3 border border-secondary rounded">
+                            <h6 class="text-danger">TryHackMe</h6>
+                            <small class="text-secondary">Advanced Labs</small>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-4">Actively preparing for <strong>OSCP</strong> to master advanced penetration testing techniques.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- AI Security Modal -->
+<div class="modal fade" id="aisecModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content bg-dark text-white border-warning">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title neon-text">AI & Data Platform Security</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <p>Securing the future of data at <strong>Dell Technologies</strong>.</p>
+                <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>Dell Data Lakehouse:</strong> Performing Threat Modelling and security scans for AI-driven data platforms.
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>Steganography:</strong> Advanced research into data hiding and MITM attack countermeasures.
+                    </li>
+                    <li class="list-group-item bg-transparent text-white border-secondary">
+                        <strong>AI for Security:</strong> Leveraging machine learning to automate threat hunting and anomaly detection.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .arsenal-card {
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+    .arsenal-card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(0, 242, 255, 0.2);
+    }
+</style>
+{% endblock %}

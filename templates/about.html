@@ -1,118 +1,131 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends "layout.html" %}
 
-<head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developped by Orson.io team" name="author">
+{% block title %}Experience & Expertise | Atharva Patil{% endblock %}
 
-  <!-- Disable tap highlight on IE -->
-  <meta name="msapplication-tap-highlight" content="no">
-
-  <link rel="apple-touch-icon" sizes="180x180" href="./static/assets/apple-icon-180x180.png">
-  <link href="./static/assets/favicon-32x32.png" rel="icon">
-
-  <title>Atharva Patil | Portfolio</title>
-
-<link href="./static/main.3f6952e4.css" rel="stylesheet"></head>
-
-<body class="">
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
- <!-- Add your content of header -->
-<header>
-  <nav class="navbar  navbar-fixed-top navbar-default">
-    <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav ">
-          <li><a href="./index.html" title="">01 : Home</a></li>
-          <li><a href="./works.html" title="">02 : Works</a></li>
-          <li><a href="./about.html" title="">03 : About me</a></li>
-          <li><a href="./contact.html" title="">04 : Contact</a></li>
-        </ul>
-
-
-      </div>
+{% block content %}
+<div class="container py-5">
+    <!-- Summary Section -->
+    <div class="row mb-5">
+        <div class="col-12 text-center">
+            <h2 class="neon-text mb-4">Professional Overview</h2>
+            <p class="lead text-secondary mx-auto" style="max-width: 800px;">
+                Computer Science Engineer and SDE2 at Dell Technologies, specializing in <strong>DevSecOps</strong> and <strong>Security Engineering</strong>. 
+                Proven track record in securing AI Data Platforms, automating complex CI/CD pipelines, and integrating robust security checks within cloud-native ecosystems.
+            </p>
+        </div>
     </div>
-  </nav>
-</header>
 
-<div class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="section-container-spacer text-center">
-            <h1 class="h2">03 : About me</h1>
-          </div>
-
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <h3> Skills:(site under development)</h3>
-                  <p> A Computer Science Engineer who is passionate about how things work. I starded coding when I was 12yrs old (HTML CSS & JAVA SCRIPT). Created my first app during 14 in cpp  VB-script. I have a great hand on linux kernals(kali,Parrot OS,ubuntu,linux mint,fedora). Uptill now I have created 50+ projects(20+python)"check my cool projects at https://github.com/attupatil ). I have gained experience in all the fields in which python can be applied, from web development to Artificial Intelligence. Currently learning about ruby.</p>
-                  <h3> Talking about me:</h3>
-                  <p> I'm a self thought programmer who loves to play guitar,during my schooling I was a band leader and also a cabinet member. I'm also a chess player and a powerlifter.
-                  <h3> Education:</h3>
-                  <p>Currently pursuing batchelors of engineering in computer science.
-                  </p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <img src="./static/assets/images/profil.png" class="img-responsive" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-
-
-       </div>
-      </div>
-    </div>
-  </div>
-
-
-<footer class="footer-container text-center">
-  <div class="container">
     <div class="row">
-      <div class="col-xs-12">
-        <p> Atharva Ashok Patil</p>
-      </div>
+        <!-- Experience Timeline -->
+        <div class="col-lg-8">
+            <h3 class="mb-4 neon-text"><i class="fas fa-terminal me-2"></i> Professional Experience</h3>
+            
+            <div class="mb-5 border-start border-2 border-info ps-4 position-relative">
+                <div class="position-absolute translate-middle-x bg-info rounded-circle" style="width: 12px; height: 12px; left: -1px; top: 10px;"></div>
+                <h4 class="mb-1 text-white">Software Engineer 2</h4>
+                <h5 class="text-info mb-1">Dell Technologies</h5>
+                <p class="text-secondary mb-3">July 2025 – Present | Bengaluru</p>
+                <div class="experience-details">
+                    <p class="mb-2"><strong>Security Engineering & SDLC Leadership @DellDataLakeHouse</strong></p>
+                    <ul class="small text-secondary">
+                        <li><strong>Secure SDLC Stewardship:</strong> Spearheading the integration of security at every stage of the Secure Development Life Cycle, from design-phase Threat Modelling to production-ready Vulnerability Management.</li>
+                        <li><strong>Proactive Leadership Communication:</strong> Regularly briefing senior leadership on the product's security posture, translating technical vulnerabilities into strategic risk assessments (SBOM/CBOM).</li>
+                        <li><strong>Cross-Functional Collaboration:</strong> Acting as the primary security liaison between engineering and external pentesting teams to remediate high-priority defects and publish Security Advisories.</li>
+                        <li><strong>Ad-Hoc Security Tasks:</strong> Taking ownership of critical unplanned security requirements, including real-time threat hunting and manual analysis of bug bounty reports.</li>
+                        <li><strong>Automation & Infrastructure:</strong> Hardening Jenkins CI/CD pipelines with custom Git PR checks to ensure zero-vulnerability container image deployments.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-5 border-start border-2 border-secondary ps-4 position-relative">
+                <div class="position-absolute translate-middle-x bg-secondary rounded-circle" style="width: 12px; height: 12px; left: -1px; top: 10px;"></div>
+                <h4 class="mb-1 text-white">Graduate Intern</h4>
+                <h5 class="text-info mb-1">Dell Technologies</h5>
+                <p class="text-secondary mb-3">July 2024 – July 2025 | Bengaluru</p>
+                <p class="small text-secondary">Focused on DevOps automation and the integration of security protocols within the Dell Data LakeHouse AI platform.</p>
+            </div>
+
+            <div class="mb-5 border-start border-2 border-secondary ps-4 position-relative">
+                <div class="position-absolute translate-middle-x bg-secondary rounded-circle" style="width: 12px; height: 12px; left: -1px; top: 10px;"></div>
+                <h4 class="mb-1 text-white">Teaching Assistant</h4>
+                <h5 class="text-info mb-1">NIT Jalandhar</h5>
+                <p class="text-secondary mb-3">August 2023 – July 2024</p>
+                <p class="small text-secondary">Provided practical instruction in <strong>Cyber Forensics</strong>, Data Structures and Algorithms (DSA), and Operating Systems to over 30 students daily.</p>
+            </div>
+
+            <div class="mb-5 border-start border-2 border-secondary ps-4 position-relative">
+                <div class="position-absolute translate-middle-x bg-secondary rounded-circle" style="width: 12px; height: 12px; left: -1px; top: 10px;"></div>
+                <h4 class="mb-1 text-white">Placement Representative</h4>
+                <h5 class="text-info mb-1">NIT Jalandhar</h5>
+                <p class="text-secondary mb-3">Nov 2023 – July 2024</p>
+                <p class="small text-secondary">Facilitated placements with global leaders including Amazon, MediaTek, and Brainwave Science.</p>
+            </div>
+        </div>
+
+        <!-- Sidebar: Skills & Certs -->
+        <div class="col-lg-4">
+            <!-- Top Skills -->
+            <div class="card mb-4 p-3 bg-dark border-secondary">
+                <h4 class="h5 neon-text mb-3"><i class="fas fa-tools me-2"></i> Top Arsenal</h4>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge bg-info text-dark">Jenkins</span>
+                    <span class="badge bg-info text-dark">DevOps</span>
+                    <span class="badge bg-info text-dark">Groovy</span>
+                    <span class="badge bg-purple text-white" style="background-color: var(--accent-purple);">Kubernetes</span>
+                    <span class="badge bg-purple text-white" style="background-color: var(--accent-purple);">Grafana</span>
+                    <span class="badge bg-secondary">Python</span>
+                    <span class="badge bg-secondary">JavaScript</span>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="card mb-4 p-3 bg-dark border-secondary">
+                <h4 class="h5 neon-text mb-3"><i class="fas fa-medal me-2"></i> Certifications</h4>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2">
+                        <small class="text-info d-block">CompTIA Security+ ce</small>
+                        <small class="text-secondary">Exp: Mar 2029</small>
+                    </li>
+                    <li class="mb-2">
+                        <small class="text-info d-block">Certified Ethical Hacker (CEH)</small>
+                        <small class="text-secondary">IIHT Ltd</small>
+                    </li>
+                    <li class="mb-2">
+                        <small class="text-info d-block">Azure Fundamentals</small>
+                        <small class="text-secondary">Microsoft Certified</small>
+                    </li>
+                    <li class="mb-2">
+                        <small class="text-info d-block">MongoDB Certified Developer</small>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Education -->
+            <div class="card p-3 bg-dark border-secondary">
+                <h4 class="h5 neon-text mb-3"><i class="fas fa-university me-2"></i> Education</h4>
+                <div class="mb-3">
+                    <small class="text-info d-block">M.Tech (CSE)</small>
+                    <small class="text-white">NIT Jalandhar</small><br>
+                    <small class="text-secondary">2023 - 2025</small>
+                </div>
+                <div>
+                    <small class="text-info d-block">B.E. (Computer Engineering)</small>
+                    <small class="text-white">University of Mumbai</small><br>
+                    <small class="text-secondary">2019 - 2023</small>
+                </div>
+            </div>
+        </div>
     </div>
 
-  </div>
-</footer>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-     navActivePage();
-  });
-</script>
-
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID
-
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', 'pageview');
-</script>
-
---> <script type="text/javascript" src="./static/main.70a66962.js"></script></body>
-
-</html>
+    <!-- Publications -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <h3 class="mb-4 neon-text text-center"><i class="fas fa-scroll me-2"></i> Publications</h3>
+            <div class="card p-4 bg-dark border-info text-center">
+                <h5>"A Novel Approach to Steganography and its Countermeasures Against Deep Learning and MITM Attacks"</h5>
+                <p class="text-secondary mb-0">Exploring advanced security protocols and countermeasures in the age of AI and adversarial attacks.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
