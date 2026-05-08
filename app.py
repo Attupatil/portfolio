@@ -52,6 +52,7 @@ limiter = Limiter(
 @app.before_request
 def log_visitor():
     if request.endpoint and 'static' not in request.endpoint:
+        # Log the visit
         log = VisitorLog(
             ip_address=request.remote_addr,
             user_agent=request.user_agent.string,
@@ -59,6 +60,37 @@ def log_visitor():
         )
         db.session.add(log)
         db.session.commit()
+
+        # Counter Alert Logic: Check daily visitor count
+        today = datetime.utcnow().date()
+        start_of_day = datetime.combine(today, datetime.min.time())
+        visitor_count = VisitorLog.query.filter(VisitorLog.timestamp >= start_of_day).count()
+
+        if visitor_count > 0 and visitor_count % 10 == 0:
+            send_traffic_alert(visitor_count)
+
+def send_traffic_alert(count):
+    mail_server = os.getenv('MAIL_SERVER')
+    mail_port = int(os.getenv('MAIL_PORT', 587))
+    mail_username = os.getenv('MAIL_USERNAME')
+    mail_password = os.getenv('MAIL_PASSWORD')
+    receiver_email = os.getenv('RECEIVER_EMAIL')
+
+    if not all([mail_server, mail_username, mail_password, receiver_email]):
+        return
+
+    msg = MIMEText(f"Security Notice: Your portfolio has reached {count} visits today.")
+    msg['Subject'] = f"TRAFFIC ALERT: {count} Visitors Milestone"
+    msg['From'] = mail_username
+    msg['To'] = receiver_email
+
+    try:
+        with smtplib.SMTP(mail_server, mail_port) as server:
+            server.starttls()
+            server.login(mail_username, mail_password)
+            server.send_message(msg)
+    except:
+        pass # Silent failure to not interrupt user experience
 
 def send_email_notification(name, email, subject, message):
     mail_server = os.getenv('MAIL_SERVER')
